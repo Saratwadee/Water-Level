@@ -112,7 +112,7 @@ void publishMQTT() {
 
 // Function to send data via LoRaWAN
 void do_send(osjob_t* j) {
-    char payload[12];
+    char payload[20];
     snprintf(payload, sizeof(payload), "%.1f,%.4f,%.4f", water_level, latitude, longitude);
 
     LMIC_setTxData2(1, (uint8_t*)payload, strlen(payload), 0);
